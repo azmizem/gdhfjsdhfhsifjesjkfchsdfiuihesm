@@ -1,20 +1,20 @@
 
 sudo apt update
 sleep 3
-sudo apt install apt-transport-https ca-certificates curl software-properties-common
+sudo apt -y install apt-transport-https ca-certificates curl software-properties-common
 sleep 3
 curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o /usr/share/keyrings/docker-archive-keyring.gpg
 sleep 3
 echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/docker-archive-keyring.gpg] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable" | sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
 sleep 3
-sudo apt update
+sudo apt update -y
 sleep 3
-sudo apt update
+sudo apt update -y
 sleep 3
 
 apt-cache policy docker-ce
 sleep 3
-sudo apt install docker-ce
+sudo apt -y install docker-ce
 sleep 3
 sudo systemctl status docker
 sleep 3
